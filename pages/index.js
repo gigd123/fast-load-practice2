@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css';
-
+import Link from 'next/link';
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -8,7 +8,12 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <div className='header'>
+      <a href='/preload/preload'>Preload</a>
+      <Link href='/prefetch/prefetch' passHref>
+      Prefetch
+      </Link>
+      </div>
       <main>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -109,6 +114,12 @@ export default function Home() {
         * {
           box-sizing: border-box;
         }
+        .header {
+          display: flex;
+        }
+        a {
+            margin-right: 10px;
+          }
       `}</style>
     </div>
   )
